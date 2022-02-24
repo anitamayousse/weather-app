@@ -11,7 +11,7 @@ import Favorites from './components/Favorites';
 function App() {
   return (
     <BrowserRouter>
-    <div className='bg-black'>
+    <Nav>
     <nav className="nav navbar-nav ">
       <Ul className='d-flex'>
         <li>
@@ -22,16 +22,14 @@ function App() {
         </li>
       </Ul>
     </nav>
-    </div>
+    </Nav>
     <Switch>
     <Route exact path="/" component={Home} />
     <Route exact path="/Favorites" component={Favorites} />
     </Switch>
-    <footer>
-      <div className="bg-black">
-        <h5 className="text-center text-white">© Made by Anita Mayousse 2022.</h5>
-      </div>
-    </footer>
+      <Footer >
+        <h6 className="text-center text-black">© Made by Anita Mayousse 2022.</h6>
+      </Footer>
     </BrowserRouter>
   );
 }
@@ -42,4 +40,14 @@ const Ul = styled.li`
   padding: 30px;
   list-style: none;
   gap: 12px;
+  `;
+
+const Nav = styled.div`
+  background-color:white;
+  `;
+
+const Footer = styled.div`
+  background-color:white;
+  height:60px;
+  padding:20px;
   `;

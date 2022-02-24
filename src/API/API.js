@@ -32,23 +32,22 @@ function Api() {
         return (f - 273.15).toFixed(0);
       };
   return (
-   <div className="App">
-    <div className="container">
-        <div>
-          <Input
-            type="text"
-            id="location-name"
-            onChange={inputHandler}
-            value={getState}
-          />
-        </div>
-        <Button  onClick={submitHandler}>
-          Search
-        </Button>
-      </div>
-      <div className="card mt-3 mx-auto" style={{ width: '60vw' }}>
+   <>
+   <div>
+    <Container >
+        <Input
+          type="text"
+          id="location-name"
+          onChange={inputHandler}
+          value={getState}
+        />
+      <Button  onClick={submitHandler}>
+        Search
+      </Button>
+    </Container>
+      <Card>
         {data.main ? (
-          <div class="card-body text-center">
+          <div >
             <img
               src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`}
               alt="weather status icon"
@@ -91,8 +90,9 @@ function Api() {
         ) : (
           <h1>Loading</h1>
         )}
+      </Card>
       </div>
-  </div>
+  </>
     )
   }
 
@@ -100,13 +100,46 @@ function Api() {
 export default Api
 
 const Input = styled.input`
-border-radius:12px;
-border-color:black;
+  border-radius:12px;
+  border: 1px solid black;
+  background-color:rgb(255, 255, 255,0.7);
+  width:80px;
+  height:40px;
+  @media (max-width: 1500px) {
+    width:200px;
+    height:40px;
+  }
   `;
 const Button = styled.button`
-border-radius:12px;
-border-width:1px;
-border-color:black;
-background-color:whitesmoke;
-width:50%;
+  border-radius:12px;
+  border-color:black;
+  border: 1px solid ;
+  background-color:rgb(255, 255, 255,0.9);
+  width:80px;
+  height:40px;
+  @media (max-width: 2500px) {
+    width:80px;
+    height:40px;
+  }
   `;
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+`;
+
+const Card = styled.div`
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  border-color:gray;
+  border-width:1px;
+  border-radius:12px;
+  margin:20px;
+  background-color:rgb(255, 255, 255,0.2);
+  max-width:20rem;
+  margin-left:auto;
+  margin-right:auto;
+`;

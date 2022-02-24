@@ -4,10 +4,12 @@ import styled from 'styled-components';
 function Home() {
     return (
         <div>
-            <div>
+          <div className="bg-img">
+
             <H3>Weather Forecast</H3>
             <Api/>
-            </div>
+
+          </div>
         </div>
     );
   }
