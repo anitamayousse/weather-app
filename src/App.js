@@ -1,4 +1,5 @@
 
+import React, {createContext, useState} from 'react';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import './App.css';
 //css
@@ -8,8 +9,22 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Home from './components/Home'
 import Favorites from './components/Favorites';
 
+export const favContext = createContext({
+  store: [],
+});
+
 function App() {
+
+  const [store, setStore] = useState([]);
+
+  const value = {
+    store: store,
+    setStore: setStore,
+  }
+
   return (
+    <>
+    <favContext.Provider value={value}>
     <BrowserRouter>
     <Nav>
     <nav className="nav navbar-nav ">
@@ -31,6 +46,8 @@ function App() {
         <h6 className="text-center text-black">© Made by Anita Mayousse 2022.</h6>
       </Footer>
     </BrowserRouter>
+    </favContext.Provider>
+    </>
   );
 }
 
