@@ -59,7 +59,7 @@ function Home() {
         setTimeout(() =>{
         if (getState !== undefined && getState !== null) {
           fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${getState}&appid=1e16d4d808acf38429a267a69416f852`
+            `https://api.openweathermap.org/data/2.5/weather?q=${getState}&units=metric&appid=1e16d4d808acf38429a267a69416f852`
         )
           .then((res) => res.json())
           .then((data) => {
@@ -73,20 +73,21 @@ function Home() {
         
       }, [getState]);
 
-      //convert F to C 
-      const convertFToC = (f) => {
-        return (f - 273.15).toFixed(0);
-      };
     return (
       <>
-          <div className="bg-img">
-
+          <div className="video-wrapper">
+            <video loop autoPlay  muted >
+            <source src="https://media.istockphoto.com/videos/colorful-cloudscape-changing-in-time-lapse-video-in-4k-video-id1271757279" type="video/mp4"/>
+            </video>
+            </div>
+            <div className='date'>
             <H3>Weather Forecast</H3>
             <div>
               <H5>Today:</H5>
               <P>{moment().format('LL')}</P>
             </div>
-   <div>
+            </div>
+   <div className="cardhome">
     <Container >
     <form onSubmit={handleSubmit(inputHandler)}>
         <Input
@@ -108,15 +109,14 @@ function Home() {
             image={`http://openweathermap.org/img/w/${data[0].weather[0].icon}.png`}
             status={data[0].weather[0].main}
             name={data[0].name}
-            degree={convertFToC(data[0].main.temp)}
-            tempMin={convertFToC(data[0].main.temp_min)}
-            tempMax={convertFToC(data[0].main.temp_max)}
+            degree={Math.round(data[0].main.temp)}
+            tempMin={Math.round(data[0].main.temp_min)}
+            tempMax={Math.round(data[0].main.temp_max)}
             onClick={getFavorite}
             children="&hearts;"
             title='Add to favorite'
       />)}
       </div>
-          </div>
           
           </>
           );
@@ -164,4 +164,5 @@ display: flex;
 justify-content: center;
 align-items: center;
 gap:10px;
+
 `;

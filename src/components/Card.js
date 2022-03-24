@@ -5,7 +5,7 @@ export default function Card(props) {
 return (
   
  <CityCard>
-  <div >
+  <div className="">
     <div className="justify-content-end d-flex py-2 px-2">
       <FavoriteButton title={props.title} type="submit" className="favoriteButton" onClick={props.onClick}><span>{props.children}</span></FavoriteButton>
     </div>
@@ -58,6 +58,7 @@ const CityCard = styled.div`
   margin-left:auto;
   margin-right:auto;
   padding:5px;
+  
 `;
 
 const FavoriteButton = styled.button`

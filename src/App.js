@@ -29,12 +29,8 @@ function App() {
     <Nav>
     <nav className="nav navbar-nav ">
       <Ul className='d-flex'>
-        <li>
           <Link to="/" className='text-link'>Home</Link>
-        </li>
-        <li>
           <Link to="/Favorites" className='text-link'>Favorites</Link>
-        </li>
       </Ul>
     </nav>
     </Nav>
@@ -66,5 +62,8 @@ const Nav = styled.div`
 const Footer = styled.div`
   background-color:white;
   height:60px;
-  padding:20px;
+  top:160%;
+  display:block;
+  position:absolute;
+  width: 100%;
   `;
