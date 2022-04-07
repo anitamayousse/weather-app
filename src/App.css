@@ -3,17 +3,11 @@
   color: inherit;
   text-decoration: inherit;
   color:black;
-}
-.bg-img{
-  background: url('./img/tumblr_eafe739a9a7a6275c9c53730b5f0b45f_1fe405f7_2048.jpeg');
-  background-position-y:center;
-  background-repeat: no-repeat;
-  padding-bottom: 100px;
-  padding-top: 100px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .video-wrapper{
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
   /* Centering the container's content vertically 
@@ -22,17 +16,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  top: 22%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+ 
+
 }
 
 video {
   /** Simulationg background-size: cover */
-  position:absolute;
-  width: 280vw;
-  height:auto;
-  top: 0;
-  left: 0;
-  padding-bottom: 50px;
-  display: none;
+  position: absolute;
+  overflow:hidden;
+  width:100%;
+  height:120%;
+  object-fit: cover;
+  margin: auto; 
+
+
 }
 
 .cardhome{
@@ -43,14 +44,13 @@ video {
 .date{
   /** Simulationg background-size: cover */
   position: relative;
-  padding-top: 100px;
+  padding-top: 60px;
+  padding-bottom: 12px;
   
 }
 .cardfavorit {
   /** Simulationg background-size: cover */
-  bottom: 0;
   position:relative;
-  display: block;
 }
 .fav{
   float: left;
@@ -58,4 +58,40 @@ video {
   justify-items: center;
   width: 33%;
 }
+.bgcard{
+  background-color:rgb(255, 255, 255,0.1);
+}
 
+.bg-home{
+  background: linear-gradient(to bottom, #b68ab1f9 0%, #ece9dae7 100%);
+  height: 355px;
+  position: absolute;
+  width: 100%;
+  /* Centering the container's content vertically 
+  and horizontally */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 56.6%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.bg-fav{
+  background: linear-gradient(to bottom, #b68ab1f9 0%, #ece9dae7 100%);
+  height: 405px;
+  position: absolute;
+  width: 100%;
+  /* Centering the container's content vertically 
+  and horizontally */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 36.6%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

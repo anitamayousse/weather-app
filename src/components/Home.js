@@ -10,7 +10,7 @@ import Card from '../components/Card'
 
 function Home() {
 
-      //states
+//states
       const [data, setData] = useState([]);
       const [getState, setGetState] = useState(localStorage.getItem("savedCity"));
       const favorite = useContext(favContext);
@@ -50,7 +50,6 @@ function Home() {
         
       }, [])
 
-      //my API 5daf559bd68e80706ccfbae852490935
       const inputHandler = () => {
         const value = getValues("location");
         setGetState(value);
@@ -75,11 +74,12 @@ function Home() {
 
     return (
       <>
-          <div className="video-wrapper">
-            <video loop autoPlay  muted >
+          <div className="video-wrapper" >
+            <video loop autoPlay  muted  >
             <source src="https://media.istockphoto.com/videos/colorful-cloudscape-changing-in-time-lapse-video-in-4k-video-id1271757279" type="video/mp4"/>
             </video>
             </div>
+            <div className='bg-home'></div>
             <div className='date'>
             <H3>Weather Forecast</H3>
             <div>
@@ -124,15 +124,20 @@ function Home() {
   
   export default Home;
 
-  const H3 = styled.h3`
+  const H3 = styled.h1`
     text-align:center;
-    padding:20px;
+    font-family: 'Oswald', sans-serif;
+    color:black;
   `;
   const H5 = styled.h5`
   text-align:center;
+  font-family: 'Oswald', sans-serif;
+  color:black;
 `;
   const P = styled.p`
   text-align:center;
+  font-family: 'Oswald', sans-serif;
+  color:black;
   `;
 
 const Input = styled.input`
@@ -144,6 +149,7 @@ height:40px;
 @media (max-width: 1500px) {
   width:200px;
   height:40px;
+  font-family: 'Oswald', sans-serif;
 }
 `;
 const Button = styled.button`
@@ -153,6 +159,7 @@ border: 1px solid ;
 background-color:rgb(255, 255, 255,0.9);
 width:80px;
 height:40px;
+font-family: 'Oswald', sans-serif;
 @media (max-width: 2500px) {
   width:80px;
   height:40px;
@@ -164,5 +171,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 gap:10px;
+padding-bottom:12px;
 
 `;

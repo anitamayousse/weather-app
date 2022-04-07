@@ -62,8 +62,9 @@ const Nav = styled.div`
 const Footer = styled.div`
   background-color:white;
   height:60px;
-  top:160%;
+  top:135%;
   display:block;
   position:absolute;
   width: 100%;
+  font-family: 'Oswald', sans-serif;
   `;

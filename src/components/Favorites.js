@@ -27,6 +27,7 @@ function Favorites() {
             <video loop autoPlay  muted >
             <source src="https://media.istockphoto.com/videos/colorful-cloudscape-changing-in-time-lapse-video-in-4k-video-id1271757279" type="video/mp4"/>
             </video>
+            <div className='bg-fav'></div>
             </div>
             <div className='date'>
             <H3> Your Favorites Weather Forecasts</H3>
@@ -42,7 +43,7 @@ function Favorites() {
                         }
             return (
             <div className="cardfavorit">
-            <div className="col fav">
+            <div className="col fav" >
             <Card 
             image={`http://openweathermap.org/img/w/${data[0].weather[0].icon}.png`}
             status={data[0].weather[0].main}
@@ -65,13 +66,19 @@ function Favorites() {
   }
   
   export default Favorites;
-  const H3 = styled.h3`
-    text-align:center;
-    padding:20px;
-  `;
-  const H5 = styled.h5`
+const H3 = styled.h1`
   text-align:center;
+  padding:20px;
+  font-family: 'Oswald', sans-serif;
+  color:black;
 `;
-  const P = styled.p`
+const H5 = styled.h5`
   text-align:center;
-  `;
+  font-family: 'Oswald', sans-serif;
+  color:black;
+`;
+const P = styled.p`
+  text-align:center;
+  font-family: 'Oswald', sans-serif;
+  color:black;
+`;

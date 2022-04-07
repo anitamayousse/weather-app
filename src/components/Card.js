@@ -4,7 +4,7 @@ export default function Card(props) {
 
 return (
   
- <CityCard>
+ <CityCard className='bgcard'>
   <div className="">
     <div className="justify-content-end d-flex py-2 px-2">
       <FavoriteButton title={props.title} type="submit" className="favoriteButton" onClick={props.onClick}><span>{props.children}</span></FavoriteButton>
@@ -53,11 +53,12 @@ const CityCard = styled.div`
   border-width:1px;
   border-radius:12px;
   margin:20px;
-  background-color:rgb(255, 255, 255,0.3);
   max-width:20rem;
   margin-left:auto;
   margin-right:auto;
   padding:5px;
+  font-family: 'Cabin', sans-serif;
+  color:black;
   
 `;
 
@@ -68,6 +69,6 @@ const FavoriteButton = styled.button`
   background-color:rgb(255, 255, 255,0.0);
   border:none;
   max-width:20rem;
-  font-size:35px;
-  color:white;
+  font-size:25px;
+  color:whitesmoke;
 `;
